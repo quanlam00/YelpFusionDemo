@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Yelp Fusion Demo</string>
+    <string name="search_hint">Find food, restaurants, businesses, ..</string>
+    <string name="search_title">Search</string>
+    <string name="rating">Rating:</string>
+    <string name="business_image">Business Image</string>
+    <string name="review_count">Review Count:</string>
+</resources>
