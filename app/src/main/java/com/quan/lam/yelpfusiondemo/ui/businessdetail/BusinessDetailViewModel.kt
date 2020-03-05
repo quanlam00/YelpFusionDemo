@@ -11,6 +11,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
+/**
+ * ViewModel of BusinessDetailFragment
+ * Will hold BusinessDetail related logic
+ */
 class BusinessDetailViewModel : ViewModel() {
     private var disposable: Disposable? = null
     val businessDetail = MutableLiveData<BusinessDetail>()

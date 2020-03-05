@@ -12,6 +12,9 @@ import io.reactivex.Single
 
 const val PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION: Int = 1
 
+/**
+ * MainActivity will be a gateway to the system's resource.
+ */
 class MainActivity : AppCompatActivity() {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 

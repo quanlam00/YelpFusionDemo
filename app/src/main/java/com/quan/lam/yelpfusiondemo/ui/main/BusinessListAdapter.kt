@@ -9,9 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.quan.lam.yelpfusiondemo.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.business_list_item.view.*
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
+/**
+ * Adapter to convert the List of Business Item into UI List Item
+ */
 class BusinessListAdapter(
     private val mValues: List<BusinessListItem>,
     private val mListener: OnBusinessItemClickListener?
@@ -50,7 +51,7 @@ class BusinessListAdapter(
     }
 
     override fun getItemCount(): Int = mValues.size
-
+    //Representation of an Item
     inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
         val mNameText: TextView = mView.businessName
         val mRatingText: TextView = mView.businessRating

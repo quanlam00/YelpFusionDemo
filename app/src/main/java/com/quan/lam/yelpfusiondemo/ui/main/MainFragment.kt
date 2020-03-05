@@ -20,7 +20,9 @@ import com.quan.lam.yelpfusiondemo.R
 import com.quan.lam.yelpfusiondemo.ui.businessdetail.BusinessDetailFragment
 import io.reactivex.disposables.Disposable
 
-
+/**
+ * Main Fragment of the app.
+ */
 class MainFragment : Fragment(), OnBusinessItemClickListener {
 
     companion object {
@@ -63,7 +65,6 @@ class MainFragment : Fragment(), OnBusinessItemClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         val businessesListObserver = Observer<List<BusinessListItem>> {
             recyclerViewAdapter.notifyItemRangeChanged(0, viewModel.getItemCount())
@@ -91,6 +92,7 @@ class MainFragment : Fragment(), OnBusinessItemClickListener {
         getLastKnownLocation()
     }
 
+    //Get Last Known location from system
     private fun getLastKnownLocation() {
         locationDisposable = (activity as MainActivity).getLastKnownLocation().subscribe(
             {location ->
@@ -111,6 +113,7 @@ class MainFragment : Fragment(), OnBusinessItemClickListener {
         locationDisposable?.dispose()
     }
 
+    //Callback when an item on the list is selected
     override fun onInteraction(item: BusinessListItem?) {
         val detailsFragment =
             BusinessDetailFragment.newInstance(item?.id ?:"")
@@ -127,5 +130,6 @@ class MainFragment : Fragment(), OnBusinessItemClickListener {
 
     override fun onSaveInstanceState(outState: Bundle) {
         //No call for super(). Bug on API Level > 11.
+        //Work around for a OS bug
     }
 }

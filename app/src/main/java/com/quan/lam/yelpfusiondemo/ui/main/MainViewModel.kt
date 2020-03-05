@@ -13,6 +13,10 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.android.schedulers.AndroidSchedulers
 
+/**
+ * ViewModel of MainFragment
+ * Will hold the list of returned businesses related logic
+ */
 class MainViewModel : ViewModel() {
     var lastKnowLocation: Location? = null
     private var disposable: Disposable? = null

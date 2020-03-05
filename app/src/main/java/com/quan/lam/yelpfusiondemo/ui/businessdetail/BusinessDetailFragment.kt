@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -16,6 +15,9 @@ import com.quan.lam.yelpfusiondemo.R
 import com.quan.lam.yelpfusiondemo.data.BusinessDetail
 import com.squareup.picasso.Picasso
 
+/** Fragement to display a detail business page
+ * @param businessId: String Id to be used for the API, cannot be empty
+  */
 class BusinessDetailFragment(val businessId: String) : Fragment() {
     companion object {
         fun newInstance(businessId: String) =

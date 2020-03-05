@@ -64,6 +64,7 @@ class MainActivityTest {
         onView(withId(R.id.editText)).perform(typeText("pizza"))
         onView(withId(R.id.locationText)).perform(typeText("new york"))
         onView(withId(R.id.searchButton)).perform(click())
+        //Give enough time for result to be returned successfully
         Thread.sleep(7000)
         onView(withId(R.id.recyclerView)).check(RecyclerViewItemCountAssertion(20))
     }
@@ -75,6 +76,7 @@ class MainActivityTest {
         onView(withId(R.id.editText)).perform(typeText("pizza"))
         onView(withId(R.id.locationText)).perform(typeText("new york"))
         onView(withId(R.id.searchButton)).perform(click())
+        //Give enough time for result to be returned successfully
         Thread.sleep(7000)
         onView(withId(R.id.recyclerView)).check(RecyclerViewItemCountAssertion(20))
 
@@ -83,6 +85,7 @@ class MainActivityTest {
             .perform(
                 RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(20))
             .perform(ViewActions.swipeUp())
+        //Give enough time for result to be returned successfully
         Thread.sleep(7000)
         onView(withId(R.id.recyclerView)).check(RecyclerViewItemCountAssertion(40))
     }
@@ -94,9 +97,11 @@ class MainActivityTest {
         onView(withId(R.id.editText)).perform(typeText("pizza"))
         onView(withId(R.id.locationText)).perform(typeText("new york"))
         onView(withId(R.id.searchButton)).perform(click())
+        //Give enough time for result to be returned successfully
         Thread.sleep(7000)
         onView(withId(R.id.recyclerView)).
             perform(click())
+        //Give enough time for result to be returned successfully
         Thread.sleep(5000)
         onView(withId(R.id.nameText)).check(ViewAssertions.matches(withText("Lucali")))
     }
